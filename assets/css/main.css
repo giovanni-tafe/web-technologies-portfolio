@@ -183,6 +183,13 @@ FOOTER UL {
     FOOTER {
         float: none;
         width: 100%;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+    }
+
+    FOOTER UL {
+        margin: 0;
     }
 }
 
