@@ -118,22 +118,38 @@ FOOTER UL {
 /*  MEDIA QUERIES */
 
 /* Tablets (Medium) */
-@media (min-width: 768px) and (max-width: 992px) {
+@media (min-width: 576px) and (max-width: 991px) {
     /* Styles for medium devices (tablets) */
 }
 
-/* Tablets (Large) */
-@media (min-width: 992px) and (max-width: 1200px) {
+/* Desktop (Large) */
+@media (min-width: 992px) {
     /* Styles for large devices (tablets) */
     aside {
         display: flex;
     }
+
+    HEADER H1 {
+        display: block;
+    }
+
+    NAV {
+        display: flex;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    NAV UL {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    #menuToggle {
+        display: none;
+    }
 }
 
-/* Tablets (Extra Large) */
+/* Desktops / Big Screens (Extra Large) */
 @media (min-width: 1200px) {
     /* Styles for extra large devices (tablets) */
-    aside {
-        display: flex; /* Apply styles to the aside element */
-    }
 }
