@@ -2,10 +2,6 @@ HEADER {
     background-color: aqua;
 }
 
-ASIDE {
-    display: flex;
-}
-
 /* 
 Devices Sizes
 Extra small devices (phones): @media (max-width: 576px)
@@ -16,10 +12,6 @@ Extra large devices (large desktops): @media (min-width: 1200px)
 */
 
 :root {
-    --extra-small-size: 575px;
-    --small-size: 576px;
-    --medium-size: 768px;
-    --large-size: 992px;
     --extra-large-size: 1200px;
     --color-primary: #0d6efd;
     --color-secondary: #aaa;
@@ -124,21 +116,24 @@ FOOTER UL {
 }
 
 /*  MEDIA QUERIES */
-/* Phones (Extra SMALL) */
-@media screen and (max-width: var(--extra-small-size)) {
-}
 
 /* Tablets (Medium) */
-@media screen and (max-width: var(--medium-size)) {
+@media (min-width: 768px) and (max-width: 992px) {
+    /* Styles for medium devices (tablets) */
 }
 
 /* Tablets (Large) */
-@media screen and (max-width: var(--large-size)) {
-    ASIDE {
-        display: none;
+@media (min-width: 992px) and (max-width: 1200px) {
+    /* Styles for large devices (tablets) */
+    aside {
+        display: flex;
     }
 }
 
 /* Tablets (Extra Large) */
-@media screen and (max-width: var(--extra-large-size)) {
+@media (min-width: 1200px) {
+    /* Styles for extra large devices (tablets) */
+    aside {
+        display: flex; /* Apply styles to the aside element */
+    }
 }
