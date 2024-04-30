@@ -29,6 +29,13 @@ H2 {
     color: var(--color-primary);
 }
 
+/* UTILITY */
+.container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* HEADER */
 HEADER {
     background-color: var(--color-primary);
@@ -129,14 +136,20 @@ FOOTER UL {
         display: flex;
     }
 
+    HEADER {
+        justify-content: flex-start;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
     HEADER H1 {
         display: block;
     }
 
     NAV {
         display: flex;
-        margin-top: 30px;
         padding: 0;
+        width: 100%;
     }
 
     NAV UL {
