@@ -26,6 +26,9 @@ Extra large devices (large desktops): @media (min-width: 1200px)
 }
 
 /* TYPOGRAPHY */
+H2 {
+    color: var(--color-primary);
+}
 
 /* HEADER */
 HEADER {
@@ -73,6 +76,10 @@ NAV UL LI {
     text-align: center;
 }
 
+MAIN {
+    padding: 20px;
+}
+
 #menuToggle {
     padding: 20px;
     cursor: pointer;
@@ -80,6 +87,16 @@ NAV UL LI {
 
 #menuToggle I {
     font-size: 25px;
+}
+
+ASIDE {
+    display: none;
+}
+
+ARTICLE {
+    padding: 10px;
+    border-bottom: 3px solid var(--color-primary);
+    margin: 20px 0;
 }
 
 /*  MEDIA QUERIES */
