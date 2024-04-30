@@ -180,6 +180,21 @@ FOOTER UL {
         padding: 2rem;
     }
 
+    ASIDE SECTION {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    ASIDE SECTION * {
+        margin: 0;
+    }
+
+    ASIDE SECTION H2 {
+        margin-bottom: 10px;
+    }
+
     FOOTER {
         float: none;
         width: 100%;
