@@ -164,6 +164,7 @@ FOOTER UL {
     .articles .wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 
     MAIN {
