@@ -1,0 +1,103 @@
+HEADER {
+    background-color: aqua;
+}
+
+ASIDE {
+    display: flex;
+}
+
+/* 
+Devices Sizes
+Extra small devices (phones): @media (max-width: 576px)
+Small devices (tablets): @media (min-width: 576px)
+Medium devices (desktops): @media (min-width: 768px)
+Large devices (desktops): @media (min-width: 992px)
+Extra large devices (large desktops): @media (min-width: 1200px) 
+*/
+
+:root {
+    --extra-small-size: 575px;
+    --small-size: 576px;
+    --medium-size: 768px;
+    --large-size: 992px;
+    --extra-large-size: 1200px;
+    --color-primary: #0d6efd;
+    --color-secondary: #aaa;
+}
+
+/* TYPOGRAPHY */
+
+/* HEADER */
+HEADER {
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #fff;
+    padding: 20px;
+}
+
+HEADER H1 {
+    text-align: center;
+    font-size: 15px;
+    display: none;
+}
+
+HEADER IMG {
+    width: 40px;
+}
+
+/* NAVIGATION MENU */
+NAV {
+    padding: 10px;
+    display: none;
+    width: 100%;
+}
+
+NAV.open {
+    display: flex;
+}
+
+NAV UL {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+NAV UL LI {
+    text-align: center;
+}
+
+#menuToggle {
+    padding: 20px;
+    cursor: pointer;
+}
+
+#menuToggle I {
+    font-size: 25px;
+}
+
+/*  MEDIA QUERIES */
+/* Phones (Extra SMALL) */
+@media screen and (max-width: var(--extra-small-size)) {
+}
+
+/* Tablets (Medium) */
+@media screen and (max-width: var(--medium-size)) {
+}
+
+/* Tablets (Large) */
+@media screen and (max-width: var(--large-size)) {
+    ASIDE {
+        display: none;
+    }
+}
+
+/* Tablets (Extra Large) */
+@media screen and (max-width: var(--extra-large-size)) {
+}
