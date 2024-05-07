@@ -167,6 +167,11 @@ FOOTER UL {
         gap: 20px;
     }
 
+    article A,
+    article A:visited {
+        color: #fff;
+    }
+
     MAIN {
         float: left;
         width: 70%;
