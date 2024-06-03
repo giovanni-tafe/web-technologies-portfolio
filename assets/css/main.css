@@ -96,7 +96,31 @@ MAIN {
 }
 
 ASIDE {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#apiCall FORM .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#apiCall input[type="submit"],
+#apiCall input[type="text"]
+{
+    width: 100%;
+    padding: 10px 25px;
+}
+
+.form-group{
+    margin-bottom: 10px;
+}
+
+.checkbox-item{
+    display: flex;
+    gap: 10px;
 }
 
 ARTICLE {
@@ -220,24 +244,3 @@ FOOTER UL {
 }
 
 
-#apiCall FORM .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-#apiCall input[type="submit"],
-#apiCall input[type="text"]
-{
-    width: 100%;
-    padding: 10px 25px;
-}
-
-.form-group{
-    margin-bottom: 10px;
-}
-
-.checkbox-item{
-    display: flex;
-    gap: 10px;
-}
