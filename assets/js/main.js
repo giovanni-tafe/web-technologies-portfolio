@@ -12,6 +12,8 @@ let selectedApi = '';
 
 // API Call
 const API_KEY = 'bz6koqIYiZhkfoCG6EA+eg==LxKRwGrTzzDFYRit';
+const hobbiesAPI = 'https://api.api-ninjas.com/v1/hobbies?category='
+const cryptoAPI = 'https://api.api-ninjas.com/v1/cryptoprice?symbol=' 
 
 function makeCall(url, params=''){
     fetch(url, {
@@ -23,12 +25,15 @@ function makeCall(url, params=''){
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Error:  Network response was not ok ' + response.statusText);
+            let errorMsg = "Error:  Network response was not ok or invalid query" + response.statusText
+            showErrorMessage(errorMsg)
+            throw new Error(errorMsg);
         }
         return response.json();
     })
     .then(data => {
         console.log('response');
+        showResultsMessage(JSON.stringify(data))
         console.log(data);
     })
     .catch(error => {
@@ -41,8 +46,16 @@ function showErrorMessage(msg){
     errors.innerText = msg
 }
 
+function showResultsMessage(msg){
+    results.innerText = msg
+}
+
 function cleanErrorMessage(){
     errors.innerText = ""
+}
+
+function cleanResultsMessage(){
+    results.innerText = ""
 }
 
 for (let i = 0; i < checkboxes.length; i++) {
@@ -58,7 +71,10 @@ for (let i = 0; i < checkboxes.length; i++) {
 function validateUserInput(){
     let checked = false;
     for (let i = 0; i < checkboxes.length; i++) {
-        checked = checkboxes[i].checked ? true : false;
+        if (checkboxes[i].checked) {
+            checked = true;
+            break; 
+        }
     }
 
     if(checked == false){
@@ -75,6 +91,12 @@ function validateUserInput(){
 
 }
 
+function mountQuery(api, parameter){
+    const url = api + parameter
+    console.log(url);
+    return url
+}
+
 menuToggle.addEventListener("click", () => {
     navMenu.classList.toggle("open");
 });
@@ -82,6 +104,15 @@ menuToggle.addEventListener("click", () => {
 submitButton.addEventListener('click', (e) => {
     e.preventDefault()
     validateUserInput()
+
+    switch(selectedApi){
+        case 'hobbies': 
+            makeCall(mountQuery(hobbiesAPI, params.value))
+            break;
+        case 'crypto':
+            makeCall(mountQuery(cryptoAPI, params.value))
+            break;
+    }
 })
 
 
