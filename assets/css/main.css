@@ -218,3 +218,26 @@ FOOTER UL {
 @media (min-width: 1200px) {
     /* Styles for extra large devices (tablets) */
 }
+
+
+#apiCall FORM .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#apiCall input[type="submit"],
+#apiCall input[type="text"]
+{
+    width: 100%;
+    padding: 10px 25px;
+}
+
+.form-group{
+    margin-bottom: 10px;
+}
+
+.checkbox-item{
+    display: flex;
+    gap: 10px;
+}
