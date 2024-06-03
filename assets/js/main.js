@@ -7,7 +7,7 @@ for (let i = 0; i < checkboxes.length; i++) {
     checkboxes[i].addEventListener('click', function(event) {
         // Your logic here
         if (event.target.checked) {
-            console.log(event.target.name + ' API is checked');
+            console.log(event.target.name + ' API is checked.');
             selectedApi = event.target.name
         }
     });
