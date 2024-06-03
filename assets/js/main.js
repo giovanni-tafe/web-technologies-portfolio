@@ -1,26 +1,17 @@
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("nav");
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const submitButton = document.getElementById('submitToApi')
+const params = document.getElementById('parameters')
+const errors = document.getElementById('errors')
+const results = document.getElementById('response')
+let checkboxSelected = false
+let validation = false
+
 let selectedApi = '';
-
-for (let i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].addEventListener('click', function(event) {
-        // Your logic here
-        if (event.target.checked) {
-            console.log(event.target.name + ' API is checked.');
-            selectedApi = event.target.name
-        }
-    });
-}
-
-menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-});
-
 
 // API Call
 const API_KEY = 'bz6koqIYiZhkfoCG6EA+eg==LxKRwGrTzzDFYRit';
-
 
 function makeCall(url, params=''){
     fetch(url, {
@@ -46,7 +37,55 @@ function makeCall(url, params=''){
     
 }
 
-makeCall('https://api.api-ninjas.com/v1/hobbies?category=general')
+function showErrorMessage(msg){
+    errors.innerText = msg
+}
+
+function cleanErrorMessage(){
+    errors.innerText = ""
+}
+
+for (let i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].addEventListener('click', function(event) {
+        if (event.target.checked) {
+            console.log(event.target.name + ' API is checked.');
+            selectedApi = event.target.name
+            checkboxSelected = true
+        }
+    });
+}
+
+function validateUserInput(){
+    let checked = false;
+    for (let i = 0; i < checkboxes.length; i++) {
+        checked = checkboxes[i].checked ? true : false;
+    }
+
+    if(checked == false){
+        showErrorMessage('Please select a checkbox')
+        return;
+    }
+
+    if(params.value == ""){
+        showErrorMessage('Please add a parameter')
+        return;
+    }
+
+    cleanErrorMessage()
+
+}
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+});
+
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault()
+    validateUserInput()
+})
+
+
+// makeCall('https://api.api-ninjas.com/v1/hobbies?category=general')
 
 
 

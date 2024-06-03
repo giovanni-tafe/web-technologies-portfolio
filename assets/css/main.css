@@ -123,6 +123,15 @@ ASIDE {
     gap: 10px;
 }
 
+#errors{
+    color: red;
+}
+
+#submitToApi{
+    background-color: #20bbc9;
+    color: #fff;
+}
+
 ARTICLE {
     padding: 10px;
     border-bottom: 3px solid var(--color-primary);
