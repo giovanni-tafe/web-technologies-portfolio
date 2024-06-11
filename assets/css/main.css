@@ -155,6 +155,12 @@ FOOTER UL {
     justify-content: center;
 }
 
+#response{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 /*  MEDIA QUERIES */
 
 /* Tablets (Medium) */

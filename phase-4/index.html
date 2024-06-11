@@ -124,15 +124,18 @@
                     <div class="wrapper">
                         <div class="form-group" style="display: flex; gap: 20px;">
                             <div class="checkbox-item">
-                                <input type="checkbox" name="hobbies" id="hobbies"/>
+                                <input type="radio" name="apiSelect" value="hobbies" id="hobbies"/>
                                 <label for="hobbies">Hobbies API</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" name="crypto" id="crypto"/>
+                                <input type="radio" name="apiSelect" value="crypto" id="crypto"/>
                                 <label for="crypto">Crypto Price API</label>
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <p id="suggestedParameters" style="color:rgb(170, 170, 170)"></p>
+                        </div>
                         <div class="form-group">
                             <input type="text" id="parameters" placeholder="Parameters">
                         </div>

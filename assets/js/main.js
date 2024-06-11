@@ -1,13 +1,13 @@
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("nav");
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const radio = document.querySelectorAll('input[name="apiSelect"]');
 const submitButton = document.getElementById('submitToApi')
 const params = document.getElementById('parameters')
 const errors = document.getElementById('errors')
 const results = document.getElementById('response')
+const suggestedParameters = document.getElementById('suggestedParameters')
 let checkboxSelected = false
 let validation = false
-
 let selectedApi = '';
 
 // API Call
@@ -25,16 +25,14 @@ function makeCall(url, params=''){
     })
     .then(response => {
         if (!response.ok) {
-            let errorMsg = "Error:  Network response was not ok or invalid query" + response.statusText
+            let errorMsg = "Error:  Invalid Query, try a valid parameter" + response.statusText
             showErrorMessage(errorMsg)
             throw new Error(errorMsg);
         }
         return response.json();
     })
     .then(data => {
-        console.log('response');
-        showResultsMessage(JSON.stringify(data))
-        console.log(data);
+        showResultsMessage(data)
     })
     .catch(error => {
         console.error('Error:', error);
@@ -46,8 +44,16 @@ function showErrorMessage(msg){
     errors.innerText = msg
 }
 
-function showResultsMessage(msg){
-    results.innerText = msg
+function showResultsMessage(data){
+    results.innerText = ''
+
+    for(const key in data){
+        if(data.hasOwnProperty(key)){
+            const p = document.createElement('p')
+            p.textContent = `${key}: ${data[key]}`
+            results.appendChild(p)
+        }
+    }
 }
 
 function cleanErrorMessage(){
@@ -58,20 +64,15 @@ function cleanResultsMessage(){
     results.innerText = ""
 }
 
-for (let i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].addEventListener('click', function(event) {
-        if (event.target.checked) {
-            console.log(event.target.name + ' API is checked.');
-            selectedApi = event.target.name
-            checkboxSelected = true
-        }
-    });
+
+function suggestParameters(params){
+    suggestedParameters.innerText = params
 }
 
 function validateUserInput(){
     let checked = false;
-    for (let i = 0; i < checkboxes.length; i++) {
-        if (checkboxes[i].checked) {
+    for (let i = 0; i < radio.length; i++) {
+        if (radio[i].checked) {
             checked = true;
             break; 
         }
@@ -79,23 +80,25 @@ function validateUserInput(){
 
     if(checked == false){
         showErrorMessage('Please select a checkbox')
-        return;
+        return false;
     }
 
     if(params.value == ""){
         showErrorMessage('Please add a parameter')
-        return;
+        return false;
     }
 
     cleanErrorMessage()
 
+    return true
 }
 
 function mountQuery(api, parameter){
     const url = api + parameter
-    console.log(url);
     return url
 }
+
+// Listeners
 
 menuToggle.addEventListener("click", () => {
     navMenu.classList.toggle("open");
@@ -103,7 +106,9 @@ menuToggle.addEventListener("click", () => {
 
 submitButton.addEventListener('click', (e) => {
     e.preventDefault()
-    validateUserInput()
+    const valid = validateUserInput()
+
+    if( !valid ) return;  
 
     switch(selectedApi){
         case 'hobbies': 
@@ -114,6 +119,21 @@ submitButton.addEventListener('click', (e) => {
             break;
     }
 })
+
+
+radio.forEach(item => {
+    item.addEventListener('click', (event) => {
+
+        let api = event.target.value
+        if (event.target.checked) {
+            selectedApi = api
+            checkboxSelected = true
+
+            selectedApi === 'hobbies' ? suggestParameters('Hobbie Category: i.e. general, sports_and_outdoors,education, collection,competition,observation'): ''
+            selectedApi === 'crypto' ? suggestParameters('Crypto Symbol: i.e. LTCBTC, BTCUSD'): ''
+        }
+    })
+});
 
 
 // makeCall('https://api.api-ninjas.com/v1/hobbies?category=general')
