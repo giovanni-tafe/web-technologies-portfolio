@@ -6,3 +6,11 @@
 | Emerald | 16,185,129    | #10b981 |
 | Sky     | 14,165,233    | #0ea5e9 |
 | rose    | 204, 252, 203 | #f43f5e |
+
+
+## Components Needed for Dashboard
+- Header
+- Horizontal Cards
+- Footer
+- Sticky Header
+- Navigation Menu
