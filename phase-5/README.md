@@ -14,3 +14,5 @@
 - Footer
 - Sticky Header
 - Navigation Menu
+
+Choosen Browser for testing: Chrome and Firefox
