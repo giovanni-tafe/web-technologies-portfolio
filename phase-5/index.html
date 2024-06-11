@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wireframes - Phase 5</title>
+        <!-- NORMALIZE -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/modern-normalize.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css" />
+        <link rel="stylesheet" href="./assets/css/site.css">
+
+        <!-- FONT AWESOME -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <header>
+            <img id="logo" src="/assets/img/apple-logo.png" alt="logo" />
+            <h1>Apple Co.</h1>
+            <div id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Instructions</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2 class="text-xl font-bold text-gray-500">Certificate IV in IT (Programming)</h2>
+            <div class="articles">
+                <div class="wrapper">
+                    <article>
+                        <h2 class="article-title">COPY, COPY</h2>
+                        <img
+                            src="/assets/img/clement-helardot-95YRwf6CNw8-unsplash.jpg"
+                            width="300"
+                            alt="article image" />
+                        <p>
+                            David Tune of Boambee, NSW, was reminded of a particularly clever pair of IT Diploma
+                            students who handed in a joint research assignment, complete with the required signed
+                            statement that it was all their original work.
+                        </p>
+                        <p>
+                            Tune recalls: "Upon reading the work for grading, I was incredibly impressed to find three
+                            pages of the document written in perfect technical German, particularly given that the
+                            students in question were none too articulate when I asked 'Sprechen sie Deutsch?'
+                        </p>
+                        <footer><a href="#">Read on X</a></footer>
+                    </article>
+                    <article>
+                        <h2 class="article-title">THAT'S MY LECTURE</h2>
+                        <p>
+                            Anyone attending an IT lecture should expect that the lecturer knows the subject. But IT
+                            lecturers are a funny lot.
+                        </p>
+                        <p>
+                            "I was told to set up a projector in one of the meeting rooms for school staff, as there was
+                            a presentation. Having done that, I hooked the presentation laptop to the network and tried
+                            to help one of the speakers from the IT faculty update the laptop to IE7. I logged off and
+                            asked her to log on with her account to try IE7.
+                        </p>
+                        <footer><a href="#">Read on X</a></footer>
+                    </article>
+                </div>
+
+                <div class="wrapper">
+                    <article>
+                        <h2 class="article-title">TUTORING THE TUTOR</h2>
+                        <p>
+                            Neil Meyers, library assistant from Gilles Plains in SA, recalls an incident with a
+                            part-time computer lecturer a couple of years ago. "I work in a vocational education
+                            library, and, on night shift, library staff are the default computer
+                            technicians/troubleshooters. One night, this part-time lecturer came to the counter, stating
+                            that she'd managed to get a CD-ROM disc stuck in the drive. She also said she felt a bit
+                            foolish, because she was instructing a class in basic computing and was unable to solve the
+                            problem in front of a room full of students.
+                        </p>
+                        <p>
+                            So I wandered over to give her assistance, pushed the drive eject button, out popped the
+                            tray and... no disc to be seen.
+                        </p>
+                        <footer><a href="#">Read on X</a></footer>
+                    </article>
+                    <article>
+                        <h2 class="article-title">CD drive</h2>
+                        <p>
+                            Before I was able to ask out the obvious question, she piped up, 'That's the CD drive? I
+                            thought it was the other one!', pointing to an old 5.25in floppy disc slot, which was there
+                            even though the drives themselves had long since been decommissioned.
+                        </p>
+                        <p>
+                            Someone from IT got out the disc the next day when they upended the machine and it fell out.
+                            Then, a week later, after I gave the lecturer her CD back, she was back within five minutes,
+                            saying, 'You won't believe it, I've done it again!'
+                        </p>
+                        <footer><a href="#">Read on X</a></footer>
+                    </article>
+                    <article>
+                        <h2 class="article-title">DOESN'T IT JUST WORK?</h2>
+                        <p>
+                            Ian Caldewell, a self-styled 'PC tinkerer', refurbishes PCs, and has ways of acquiring
+                            modems, monitors, CPUs, boxes and RAM - to the point where it has become a pastime consuming
+                            most of his leisure time. He now has streams of people seeking repairs, advice and
+                            assistance. "Recently, I replaced an old power supply for a couple, and, when they came to
+                            collect, they asked whether I made house calls. I said I could and asked what they needed."
+                            The lady told Caldewell she'd bought a new wireless mouse, and, since it was the last one on
+                            display, it didn't come with a box or instructions. "I asked her: 'Did you put batteries in
+                            it?!' She hadn't, of course."
+                        </p>
+                        <footer><a href="#">Read on X</a></footer>
+                    </article>
+                </div>
+            </div>
+        </main>
+        <aside>
+            <section id="apiCall">
+                <h2>Ninja API App</h2>
+                <form>
+                    <div class="wrapper">
+                        <div class="form-group" style="display: flex; gap: 20px;">
+                            <div class="checkbox-item">
+                                <input type="radio" name="apiSelect" value="hobbies" id="hobbies"/>
+                                <label for="hobbies">Hobbies API</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="apiSelect" value="crypto" id="crypto"/>
+                                <label for="crypto">Crypto Price API</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p id="suggestedParameters" style="color:rgb(170, 170, 170)"></p>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="parameters" placeholder="Parameters">
+                        </div>
+
+                        <div class="form-group">
+                            <input id="submitToApi" type="submit" value="Send API Call">
+                        </div>
+                        <div class="form-group">
+                            <p id="errors"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <h2>Results</h2>
+                            <p id="response"></p>
+                        </div>
+
+                    </div>
+                </form>
+                <footer>Giovanni</footer>
+            </section>
+            <section>
+                <h2>Heading</h2>
+                <img src="/assets/img/andras-vas-Bd7gNnWJBkU-unsplash.jpg" width="200" alt="article image" />
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <footer>Giovanni</footer>
+            </section>
+            <section>
+                <h2>MAKE MY DAY, PC</h2>
+                <p>
+                    Chris Aitken, a designer and programmer from Camden, NSW, believes his story proves that tech
+                    support is one of the most stressful jobs on earth. He recalls working for a small internet provider
+                    in the late '90s, when one of the customers was a local police officer.
+                </p>
+            </section>
+            <section>
+                <h2>Heading</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </section>
+            <section>
+                <h2>Heading</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </section>
+        </aside>
+        <footer>
+            <p class="copyright">Copyright 2024 - Giovanni Martins</p>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Instructions</li>
+            </ul>
+        </footer>
+        <script src="/assets/js/main.js"></script>
+    </body>
+</html>
