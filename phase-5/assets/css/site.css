@@ -738,6 +738,10 @@ video {
   gap: 1.5rem;
 }
 
+.self-end {
+  align-self: flex-end;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -878,8 +882,21 @@ video {
   line-height: 1.75rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-\[20px\] {
+  font-size: 20px;
+}
+
 .font-bold {
   font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .text-gray-500 {
@@ -1003,8 +1020,16 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:grid {
     display: grid;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:w-1\/2 {
