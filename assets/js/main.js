@@ -10,6 +10,14 @@ let checkboxSelected = false
 let validation = false
 let selectedApi = '';
 
+let mainMenu = document.getElementById('mainMenu')
+
+menuToggle.addEventListener('click', () => {
+    mainMenu.classList.toggle('hidden')
+    mainMenu.classList.toggle('flex')
+    mainMenu.classList.toggle('gap-4')
+});
+
 // API Call
 const API_KEY = 'bz6koqIYiZhkfoCG6EA+eg==LxKRwGrTzzDFYRit';
 const hobbiesAPI = 'https://api.api-ninjas.com/v1/hobbies?category='
